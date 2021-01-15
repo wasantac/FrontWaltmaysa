@@ -1,0 +1,17 @@
+.fondo{
+    background-color: #04478D;
+}
+.waltmaysa {
+    width: 300px;
+    margin-right: 0%;
+    padding-right: 0%;
+}
+.buscador{
+    border-radius: 5px;
+    border-color: transparent;
+}
+.boton{
+    z-index: 10;
+    right: 0px;
+    border-radius: 5px;
+}

@@ -1,0 +1,33 @@
+div li.oculto {
+    display: none;
+}
+@media only screen and (max-width: 991px) {
+    div li.oculto {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    div li.oculto {
+        display: inline;
+    }
+}
+.icono{
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    
+    transform: translate(-50%, -50%);
+}
+.mostrarMovil{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .mostrarMovil {
+        display: inline;
+    }
+}
+.inputWaltmaysa{
+    border: none;
+    border-bottom: 2px solid #04478D;
+}

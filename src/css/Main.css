@@ -1,0 +1,40 @@
+#redes-sociales p,
+#Informacion p,
+#quick a,
+#Informacion a {
+    font-size: 15px;
+}
+
+#redes-sociales img {
+    width: 10%;
+    padding-right: 2%;
+    font-size: 15px;
+}
+
+#Informacion img {
+    width: 10%;
+    padding-right: 2%;
+}
+
+#Informacion p {
+    margin: 0;
+}
+
+#tarjetas img {
+    width: 15%;
+    padding-right: 2%;
+    font-size: 15px;
+}
+
+div.col-lg-6.col-md-8.ml-auto.mr-auto {
+    margin-top: 15px;
+}
+
+.cardcm:hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+}
+
+#search-bar {
+    margin: auto;
+}
