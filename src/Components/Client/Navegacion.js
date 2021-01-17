@@ -50,7 +50,7 @@ let Navegacion = () =>{
                         <a href="/" className="nav-link">Inicio</a>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
+                        <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown"  aria-expanded="false" >Productos</a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a className="dropdown-item" href="/productos/todos">Todos</a>
                             <a className="dropdown-item" href="/productos/Electrodomésticos">Electrodomésticos</a>
@@ -67,7 +67,7 @@ let Navegacion = () =>{
 
                 <form className="form-inline ml-auto">
                     <div className="col-xs-auto pr-4 my-auto">
-                        <a href="/" className="text-dark py-auto">
+                        <a href="/carrito" className="text-dark py-auto">
                             <img src="/assets/svg/cart.svg" width="35px" height="35px" alt="cart"></img>
                             Carrito
                         </a>

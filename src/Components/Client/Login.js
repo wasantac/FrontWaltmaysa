@@ -25,7 +25,7 @@ const Login = () => {
                                     <input type="password" className="form-control" id="contra" placeholder="Contraseña"/>
                                 </div>
                                 <div className="form-group">
-                                    <a href=""><small id="emailHelp" className="form-text text-danger color"><u>Olvide mi contraseña</u></small></a>
+                                    <a href="/"><small id="emailHelp" className="form-text text-danger color"><u>Olvide mi contraseña</u></small></a>
                                     <a href="/auth/register"><small id="emailHelp" className="form-text text-dark color">No tiene cuenta? Haga click
                         aqui.</small></a>
                                 </div>

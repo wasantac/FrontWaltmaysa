@@ -12,6 +12,7 @@ import Auth from './Components/Client/Auth';
 import Productos from './Components/Client/Productos';
 import Admin from './Components/Admin/Admin';
 import Error from './Components/Client/Error';
+import Carrito from './Components/Client/Carrito';
 function App() {
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/auth" component={Auth}/>
           <Route path="/productos" component={Productos}/>
           <Route path="/admin" component={Admin}/>
+          <Route path="/carrito" component={Carrito}/>
           <Route path="*" component={Error}/>
         </Switch>
       </div>

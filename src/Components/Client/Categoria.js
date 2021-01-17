@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../../css/categoria.css';
 import {Spinner} from 'reactstrap';
+
+
 const Categoria = ({id}) => {
     const [isLoaded,setIsLoaded] = useState(false);
     const [items,setItems] = useState([]);
@@ -12,29 +14,22 @@ const Categoria = ({id}) => {
         speed: 500,
         infinite: false,
         slidesToShow: 3,
-        slidesToScroll: 3
-    });
-    useEffect(()=>{
-        let handleResize = () =>{
-            if(window.innerWidth <= 661){
-                setSettings({
+        slidesToScroll: 3,
+        arrows:true,
+        responsive:[
+            {
+                breakpoint: 661,
+                settings:{
                     speed: 500,
+                    arrows:true,
                     infinite: false,
                     slidesToShow: 1,
                     slidesToScroll: 1
-                });
+                }
             }
-            else{
-                setSettings({
-                    speed: 500,
-                    infinite: false,
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                });
-            }
-        }
-        window.addEventListener('resize',handleResize)
-    },[]);
+        ]
+    });
+   
     useEffect(() => {
         fetch("/assets/json/productos.json")
         .then((response) => response.json())
@@ -43,31 +38,16 @@ const Categoria = ({id}) => {
             for(let producto of productos){
                 if(producto.tipo === id){
                     items.push(
-                        <div>
+                        <div key={producto.id}>
                             <h3 className="m-2">
                                 <ProductoCard enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
-                                altura="300px"/>
+                                altura="400px"/>
                             </h3>
                         </div>
                 )
                 }
             }
-            if(window.innerWidth <= 661){
-                setSettings({
-                    speed: 500,
-                    infinite: false,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                });
-            }
-            else{
-                setSettings({
-                    speed: 500,
-                    infinite: false,
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                });
-            }
+        
             setIsLoaded(true);
         })
         .catch((error) => {
@@ -83,8 +63,8 @@ const Categoria = ({id}) => {
             <div>
                 <Slider {...settings}>
                     {items}
-                </Slider>
-                
+                </Slider>   
+
             </div>
         </div> );
     }

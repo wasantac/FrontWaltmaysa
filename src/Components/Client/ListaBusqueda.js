@@ -12,17 +12,16 @@ const ListaBusqueda = ({titulo}) => {
         .then((response) => response.json())
         .then((str) => {
             let productos = str.productos;
-            let llave = 0
             for(let producto of productos){
                 let str = new String(producto.nombre);
                 str = str.toLowerCase();
                 console.log(str.includes(titulo.toLowerCase()))
                 if(str.includes(titulo.toLowerCase())){
                     items.push(
-                            <ProductoItem key={llave.toString()}enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
+                            <ProductoItem key={producto.id} enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
                                     altura="200px"/>
                     )
-                    llave++;
+
                 }
 
             }
@@ -31,7 +30,7 @@ const ListaBusqueda = ({titulo}) => {
         .catch((error) => {
             console.log("Error: " + error)
         })
-    },[]);
+    });
     if(loaded){
         return (
             <div>

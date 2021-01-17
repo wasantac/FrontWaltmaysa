@@ -36,7 +36,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="row w-100 mx-auto">
-                        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1hohOvQjDvKLPTmE-E1kOWfQ5SDCihKiA" height="300" className="w-100 my-5"></iframe>
+                        <iframe title="mapa"src="https://www.google.com/maps/d/u/0/embed?mid=1hohOvQjDvKLPTmE-E1kOWfQ5SDCihKiA" height="300" className="w-100 my-5"></iframe>
                     </div>
                 </div>
             </div>

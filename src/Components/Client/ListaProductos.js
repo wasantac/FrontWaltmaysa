@@ -17,7 +17,7 @@ const ListaProductos = ({categoria}) => {
                 if(categoria !== ""){
                     if(categoria === producto.tipo){
                         items.push(
-                                <ProductoItem key={llave.toString()} enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
+                                <ProductoItem key={producto.id} enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
                                         altura="200px"/>
                         )
                     }
@@ -25,7 +25,7 @@ const ListaProductos = ({categoria}) => {
                 }
                 else{
                     items.push(
-                            <ProductoItem enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
+                            <ProductoItem key={producto.id} enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
                                     altura="200px"/>
                     )
                     llave++;
@@ -39,7 +39,7 @@ const ListaProductos = ({categoria}) => {
         .catch((error) => {
             console.log("Error: " + error)
         })
-    },[]);
+    });
     if(loaded){
         return (
             <div>
