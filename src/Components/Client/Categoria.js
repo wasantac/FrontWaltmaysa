@@ -45,7 +45,8 @@ const Categoria = ({id}) => {
                     items.push(
                         <div>
                             <h3 className="m-2">
-                                <ProductoCard enlace="/" src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}/>
+                                <ProductoCard enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
+                                altura="300px"/>
                             </h3>
                         </div>
                 )

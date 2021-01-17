@@ -8,6 +8,10 @@ import {
 } from "react-router-dom";
 import About from './Components/Client/About';
 import Contacto from './Components/Client/Contacto';
+import Auth from './Components/Client/Auth';
+import Productos from './Components/Client/Productos';
+import Admin from './Components/Admin/Admin';
+import Error from './Components/Client/Error';
 function App() {
   return (
     <Router>
@@ -22,6 +26,10 @@ function App() {
           <Route path="/contactos">
             <Contacto />
           </Route>
+          <Route path="/auth" component={Auth}/>
+          <Route path="/productos" component={Productos}/>
+          <Route path="/admin" component={Admin}/>
+          <Route path="*" component={Error}/>
         </Switch>
       </div>
     </Router>

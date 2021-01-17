@@ -10,15 +10,15 @@ const Footer = () => {
                             <h4 className="card-title">Redes Sociales</h4>
                             <p> Siguenos en:</p>
                             <p>
-                                <a href="https://www.facebook.com/waltmaysa16" rel="nofollow"target="_blank">
+                                <a href="https://www.facebook.com/waltmaysa16" rel="noreferrer" target="_blank">
                                     <img src="/assets/images/redes/facebook.png" alt="Facebook"></img>
                                     Waltmaysa
                                 </a>
 
                             </p>
                             <p>
-                                <a href="https://www.instagram.com/waltmaysa_sa/" rel="nofollow" target="_blank" alt="Instagram">
-                                <img src="/assets/images/redes/instagram.png"></img>
+                                <a href="https://www.instagram.com/waltmaysa_sa/" rel="noreferrer" target="_blank" alt="Instagram">
+                                <img src="/assets/images/redes/instagram.png" alt="instagram"></img>
                                 @waltmaysa_sa
                                 </a>
                             </p>  

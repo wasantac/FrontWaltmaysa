@@ -1,59 +1,69 @@
 {
     "productos": [{
+            "id": 1,
             "nombre": "Sanduchera Panini",
             "tipo": "Tecnología",
             "precio": 65,
             "imageurl": "/assets/images/productos/Sanducherapanini.jpeg"
         },
         {
+            "id": 2,
             "nombre": "Televisor 55' TCL",
             "tipo": "Electrodomésticos",
             "precio": 625,
             "imageurl": "/assets/images/productos/Tcl55.jpeg"
         },
         {
+            "id": 3,
             "nombre": "Televisor 55'Samsung",
             "tipo": "Electrodomésticos",
             "precio": 765,
             "imageurl": "/assets/images/productos/Samsung55.jpeg"
         },
         {
+            "id": 4,
             "nombre": "Freidora de Aire 1.5 lt",
             "tipo": "Tecnología",
             "precio": 65,
             "imageurl": "/assets/images/productos/Freidoraaire.jpeg"
         },
         {
+            "id": 5,
             "nombre": "Procesador de Comida Home",
             "tipo": "Tecnología",
             "precio": 65,
             "imageurl": "/assets/images/productos/Procesadorcomida.jpeg"
         },
         {
+            "id": 6,
             "nombre": "Cocina de 4 Ornillas con Grill Mabe",
             "tipo": "Electrodomésticos",
             "precio": 370,
             "imageurl": "/assets/images/productos/Cocinamabe.jpeg"
         },
         {
+            "id": 7,
             "nombre": "Radio de Carro",
             "tipo": "Tecnología",
             "precio": 89,
             "imageurl": "/assets/images/productos/RadioCarro.jpeg"
         },
         {
+            "id": 8,
             "nombre": "Aire Acondicionado USA AIR 24.000 ECOLOGICO",
             "tipo": "Electrodomésticos",
             "precio": 499,
             "imageurl": "/assets/images/productos/UsaAir12.jpeg"
         },
         {
+            "id": 9,
             "nombre": "Aire Acondicionado USA AIR 12.000 ECOLOGICO",
             "tipo": "Electrodomésticos",
             "precio": 245,
             "imageurl": "/assets/images/productos/UsaAir24.jpeg"
         },
         {
+            "id": 10,
             "nombre": "Ventilador de 15' Pedestal",
             "tipo": "Electrodomésticos",
             "precio": 25,

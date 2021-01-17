@@ -1,18 +1,24 @@
 import React from 'react';
 import '../../css/Navegacion.css'
 import {BiSearchAlt} from 'react-icons/bi'
+import {useHistory} from 'react-router-dom';
+
+
 
 let Navegacion = () =>{
-
+    const history = useHistory();
     return(
         <nav className="navbar navbar-expand-lg sticky-top mb-0">
         <div className="container">
             <div className="navbar-translate">
                 
                 <div className="input-group py-auto ml-auto">
-                <input type="text" className="inputWaltmaysa" placeholder="Buscar un Producto..."></input>
-                <div className="input-group-prepend">
-                    <span className="input-group-text">
+                <input id="inputProducto"type="text" className="inputWaltmaysa" placeholder="Buscar un Producto..." name="producto"></input>
+                <div className="input-group-prepend" onClick={() =>{
+                                    let buscar = document.getElementById("inputProducto").value
+                                    history.push("/productos/busqueda/" + buscar)
+                        }}>
+                    <span className="input-group-text p-0">
                         <button className="btn btn-primary"><i className="material-icons text-center text-white"><BiSearchAlt></BiSearchAlt></i></button>
                         
                     </span>
@@ -32,13 +38,13 @@ let Navegacion = () =>{
                 <ul className="navbar-nav">
                     <li className="nav-item oculto">
                         <a href="/auth/login" className="text-dark py-auto nav-link">
-                            <img src="/assets/svg/account_circle-24px.svg" width="35px" height="35px"></img>
+                            <img src="/assets/svg/account_circle-24px.svg" width="35px" height="35px" alt="account"></img>
                             Iniciar Sesión
                         </a>
                     </li>
                     <li className="nav-item oculto">
-                        <a href="" className="text-dark py-auto nav-link">
-                            <img src="/assets/svg/cart.svg" width="35px" height="35px"></img>Carrito</a>
+                        <a href="/" className="text-dark py-auto nav-link">
+                            <img src="/assets/svg/cart.svg" width="35px" height="35px" alt="cart"></img>Carrito</a>
                     </li>
                     <li className="nav-item">
                         <a href="/" className="nav-link">Inicio</a>
@@ -61,14 +67,14 @@ let Navegacion = () =>{
 
                 <form className="form-inline ml-auto">
                     <div className="col-xs-auto pr-4 my-auto">
-                        <a href="" className="text-dark py-auto">
-                            <img src="/assets/svg/cart.svg" width="35px" height="35px"></img>
+                        <a href="/" className="text-dark py-auto">
+                            <img src="/assets/svg/cart.svg" width="35px" height="35px" alt="cart"></img>
                             Carrito
                         </a>
                     </div>
                     <div className="col-xs-auto pr-1 my-auto">
-                        <a href="auth/login" className="text-dark py-auto">
-                        <img src="/assets/svg/account_circle-24px.svg" width="35px" height="35px"></img>
+                        <a href="/auth/login" className="text-dark py-auto">
+                        <img src="/assets/svg/account_circle-24px.svg" width="35px" height="35px" alt="account"></img>
                             Iniciar Sesión
                         </a>
                     </div>

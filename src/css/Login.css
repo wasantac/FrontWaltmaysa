@@ -1,0 +1,6 @@
+.color{
+    text-decoration: underline;
+}
+.color:hover{
+    transform: scale(1.1);
+}

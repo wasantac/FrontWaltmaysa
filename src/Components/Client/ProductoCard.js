@@ -5,11 +5,11 @@ import {
   } from 'reactstrap';
 import '../../css/ProductoCard.css'
 
-const ProductoCard = ({enlace,src,titulo,precio}) => {
+const ProductoCard = ({enlace,src,titulo,precio,altura}) => {
     return (
         <a href={enlace}>
             <Card className="productoTarjeta">
-                <CardImg top width="100%" src={src} alt="Card image cap" height="300px"/> 
+                <CardImg top width="100%" src={src} alt="Card image cap" height={altura}/> 
                 <CardBody>
                     <CardTitle tag="h5">{titulo}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted">${precio}</CardSubtitle>
