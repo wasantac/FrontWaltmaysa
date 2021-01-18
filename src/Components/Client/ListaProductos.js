@@ -12,7 +12,7 @@ const ListaProductos = ({categoria}) => {
         .then((response) => response.json())
         .then((str) => {
             let productos = str.productos;
-            let llave = 0;
+
             for(let producto of productos){
                 if(categoria !== ""){
                     if(categoria === producto.tipo){
@@ -21,14 +21,13 @@ const ListaProductos = ({categoria}) => {
                                         altura="200px"/>
                         )
                     }
-                    llave++;
+   
                 }
                 else{
                     items.push(
                             <ProductoItem key={producto.id} enlace={"/productos/descripcion/" + producto.id} src={producto.imageurl} titulo={producto.nombre} precio={producto.precio}
                                     altura="200px"/>
                     )
-                    llave++;
                 }
                 
 

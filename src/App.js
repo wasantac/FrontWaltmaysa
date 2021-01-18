@@ -13,7 +13,16 @@ import Productos from './Components/Client/Productos';
 import Admin from './Components/Admin/Admin';
 import Error from './Components/Client/Error';
 import Carrito from './Components/Client/Carrito';
+import { useEffect } from 'react';
 function App() {
+  useEffect(()=>{
+    if(!localStorage.getItem("carrito")){
+      localStorage.setItem("carrito","")
+    }
+    if(!localStorage.getItem("precio")){
+      localStorage.setItem("precio",0)
+    }
+  })
   return (
     <Router>
       <div className="App">

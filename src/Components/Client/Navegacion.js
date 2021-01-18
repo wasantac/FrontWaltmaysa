@@ -43,7 +43,7 @@ let Navegacion = () =>{
                         </a>
                     </li>
                     <li className="nav-item oculto">
-                        <a href="/" className="text-dark py-auto nav-link">
+                        <a href="/carrito" className="text-dark py-auto nav-link">
                             <img src="/assets/svg/cart.svg" width="35px" height="35px" alt="cart"></img>Carrito</a>
                     </li>
                     <li className="nav-item">
