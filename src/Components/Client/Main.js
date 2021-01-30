@@ -44,7 +44,6 @@ class Main extends Component {
 
         return (
             <div>
-                <Loader></Loader>
                 <ClienteHead></ClienteHead>
                 <Header />
                 <div className="px-auto">

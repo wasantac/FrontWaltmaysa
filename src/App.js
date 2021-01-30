@@ -14,6 +14,7 @@ import Admin from './Components/Admin/Admin';
 import Error from './Components/Client/Error';
 import Carrito from './Components/Client/Carrito';
 import ClienteHead from './Components/Client/ClienteHead';
+import Loader from './Components/Client/Loader';
 import { useEffect } from 'react';
 function App() {
   useEffect(()=>{
@@ -26,6 +27,7 @@ function App() {
   })
   return (
     <Router>
+      <Loader></Loader>
       <div className="App">
         <Switch>
           <Route exact path="/">

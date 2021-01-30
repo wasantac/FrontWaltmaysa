@@ -4,7 +4,9 @@ import { Route } from 'react-router-dom';
 const Admin = ({match}) => {
     return (
         <div>
-            <Route exact path={match.url}></Route>
+            <Route exact path={match.url}>
+                
+            </Route>
         </div>
     );
 }
