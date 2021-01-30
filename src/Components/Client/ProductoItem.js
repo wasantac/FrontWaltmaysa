@@ -9,7 +9,7 @@ const ProductoItem = ({enlace,src,titulo,precio,altura}) => {
                     <img src={src} alt={titulo} width={altura} height={altura} ></img>
                 </Col>
                 <Col sm="7">
-                    <h4 className="text-dark font-weight-bold text-left">{titulo}</h4>
+                    <h4 className="text-dark font-weight-bold text-left titulo">{titulo}</h4>
                 </Col>
                 <Col sm="2">
                     <h2 className="text-dark">${precio}</h2>

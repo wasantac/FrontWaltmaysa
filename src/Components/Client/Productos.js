@@ -1,6 +1,7 @@
 import React from 'react';
 import ListaProductos from './ListaProductos';
 import ListaBusqueda from './ListaBusqueda';
+import ClienteHead from './ClienteHead';
 import {Route, useParams} from 'react-router-dom';
 import Descripcion from './Descripcion';
 const Busqueda = () =>{
@@ -18,6 +19,7 @@ const ParamDesc = () =>{
 const Productos = ({match}) => {
     return (
         <div>
+            <ClienteHead></ClienteHead>
             <Route path={match.url + "/todos"}>
                 <ListaProductos categoria=""></ListaProductos>
             </Route>
