@@ -31,7 +31,6 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            
             <Main />
           </Route>
           <Route path="/nosotros">

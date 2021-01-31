@@ -54,7 +54,6 @@ const CarritoDetalle = ({src,titulo,precio,cant,id}) => {
             <div className="fila m-4">
                 <div className="text-right px-4 trash" onClick={eliminarCarrito}><FaTrash></FaTrash></div>
                 <Row className="align-items-center">
-    
                     <Col sm="3">
                         <img src={src} alt={titulo} width="200px" height="200px" ></img>
                     </Col>

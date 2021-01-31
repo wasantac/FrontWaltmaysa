@@ -39,7 +39,6 @@ const ListaBusqueda = ({titulo}) => {
                     <BarraLateral></BarraLateral>
                     <Col sm="10">
                         {items}
-
                     </Col>  
                     </Row>
     

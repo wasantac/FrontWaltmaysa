@@ -61,7 +61,7 @@ class Main extends Component {
                                 <img className="d-block w-100" alt="Second slide"/>
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" alt="Third slide"/>4
+                                <img className="d-block w-100" alt="Third slide"/>
                                 
                             </div>
                         </div>
