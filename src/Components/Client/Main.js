@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Categoria from './Categoria';
 import Footer from './Footer';
+import ClienteHead from './ClienteHead';
 import '../../css/Main.css'
+import Loader from './Loader';
+
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -41,6 +44,7 @@ class Main extends Component {
 
         return (
             <div>
+                <ClienteHead></ClienteHead>
                 <Header />
                 <div className="px-auto">
                     <div id="publicidad" className="carousel slide mx-auto" data-ride="carousel">
@@ -57,7 +61,8 @@ class Main extends Component {
                                 <img className="d-block w-100" alt="Second slide"/>
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" alt="Third slide"/>
+                                <img className="d-block w-100" alt="Third slide"/>4
+                                
                             </div>
                         </div>
                         <a className="carousel-control-prev" href="#publicidad" role="button" data-slide="prev">

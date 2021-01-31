@@ -13,6 +13,8 @@ import Productos from './Components/Client/Productos';
 import Admin from './Components/Admin/Admin';
 import Error from './Components/Client/Error';
 import Carrito from './Components/Client/Carrito';
+import ClienteHead from './Components/Client/ClienteHead';
+import Loader from './Components/Client/Loader';
 import { useEffect } from 'react';
 function App() {
   useEffect(()=>{
@@ -25,22 +27,37 @@ function App() {
   })
   return (
     <Router>
+      <Loader></Loader>
       <div className="App">
         <Switch>
           <Route exact path="/">
+            
             <Main />
           </Route>
           <Route path="/nosotros">
+          <ClienteHead></ClienteHead>
             <About />
           </Route>
           <Route path="/contactos">
+          <ClienteHead></ClienteHead>
             <Contacto />
           </Route>
-          <Route path="/auth" component={Auth}/>
-          <Route path="/productos" component={Productos}/>
+          <Route path="/auth">
+            <ClienteHead></ClienteHead>
+            <Auth></Auth>
+          </Route>
+          <Route path="/productos"component={Productos} >
+          
+          </Route>
           <Route path="/admin" component={Admin}/>
-          <Route path="/carrito" component={Carrito}/>
-          <Route path="*" component={Error}/>
+          <Route path="/carrito">
+          <ClienteHead></ClienteHead>
+          <Carrito></Carrito>
+          </Route>
+
+          <Route path="*" component={Error}>
+          <ClienteHead></ClienteHead>
+          </Route>
         </Switch>
       </div>
     </Router>

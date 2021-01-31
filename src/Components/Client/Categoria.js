@@ -69,7 +69,7 @@ const Categoria = ({id}) => {
         </div> );
     }
     else{
-        return(        
+        return(     
         <div className="mt-5">
         <div>
             <h1 className="tituloCategoria">{id}</h1>
@@ -77,7 +77,7 @@ const Categoria = ({id}) => {
         <div>
             <Spinner color="primary" />  
         </div>
-    </div>);
+        </div>);
     }
 
 }
