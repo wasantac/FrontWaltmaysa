@@ -11,6 +11,8 @@ import Contacto from './Components/Client/Contacto';
 import Auth from './Components/Client/Auth';
 import Productos from './Components/Client/Productos';
 import Admin from './Components/Admin/Admin';
+import Component from './Components/Admin/Component';
+import Analytics from './Components/Admin/Analytics';
 import Error from './Components/Client/Error';
 import Carrito from './Components/Client/Carrito';
 import ClienteHead from './Components/Client/ClienteHead';
@@ -49,6 +51,9 @@ function App() {
           
           </Route>
           <Route path="/admin" component={Admin}/>
+          <Route path="/component" component={Component}/>
+          <Route path="/analytics" component={Analytics}/>
+
           <Route path="/carrito">
           <ClienteHead></ClienteHead>
           <Carrito></Carrito>
