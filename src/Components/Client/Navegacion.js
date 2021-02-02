@@ -10,9 +10,8 @@ let Navegacion = () =>{
     return(
         <nav className="navbar navbar-expand-lg sticky-top mb-0">
         <div className="container">
-            <div className="navbar-translate">
-                
-                <div className="input-group py-auto ml-auto">
+            <div className="navbar-translate ">
+                <div className="input-group py-auto m-0">
                 <input id="inputProducto"type="text" className="inputWaltmaysa" placeholder="Buscar un Producto..." name="producto"></input>
                 <div className="input-group-prepend" onClick={() =>{
                                     let buscar = document.getElementById("inputProducto").value

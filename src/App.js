@@ -17,6 +17,7 @@ import Error from './Components/Client/Error';
 import Carrito from './Components/Client/Carrito';
 import ClienteHead from './Components/Client/ClienteHead';
 import Loader from './Components/Client/Loader';
+import Perfil from './Components/Client/Perfil';
 import { useEffect } from 'react';
 function App() {
   useEffect(()=>{
@@ -53,7 +54,7 @@ function App() {
           <Route path="/admin" component={Admin}/>
           <Route path="/component" component={Component}/>
           <Route path="/analytics" component={Analytics}/>
-
+          <Route path="/perfil" component={Perfil}></Route>
           <Route path="/carrito">
           <ClienteHead></ClienteHead>
           <Carrito></Carrito>

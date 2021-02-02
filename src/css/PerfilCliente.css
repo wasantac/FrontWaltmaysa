@@ -1,0 +1,16 @@
+.cropped {
+    width: 150px; /* width of container */
+    height: 150px; /* height of container */
+    overflow: hidden;
+    border-radius: 50%;
+}
+.fotoPerfil{
+    width: 150px; /* width of container */
+    height: 150px; /* height of container */
+}
+.contenedorP{
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+}
