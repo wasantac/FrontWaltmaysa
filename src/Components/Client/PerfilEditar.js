@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import {Row,Container,Col} from 'reactstrap';
 import { useHistory } from "react-router-dom";
+import axios from 'axios';
 
 const PerfilEditar = () => {
+    const [user,setUser] = useState("");
+    const [pass,setPass] = useState("");
+    const [email,setEmail] = useState("");
+    const [passC,setPassC] = useState("");
     const history = useHistory();
     let guardarDatos = () => {
-        history.push('/perfil')
+        if(pass === passC){
+            axios.post("https://0ab699b799efc19a7e61ae996b79a3da.m.pipedream.net",{
+                correo: email,
+                usuario: user,
+                password: pass 
+            })
+            .then(res => {
+                history.push('/perfil')
+            })
+            
+        }
+        
     }
     return (
         <div>
@@ -20,19 +36,23 @@ const PerfilEditar = () => {
                         <form>
                             <div className="form-group">
                                 <label for="correo" >Correo</label>
-                                <input type="email" className="form-control" id="correo" value="walter@hotmail.com"/>
+                                <input type="email" className="form-control" id="correo"  name="correo"
+                                onChange={e => setEmail(e.target.value)}/>
                             </div>
                             <div className="form-group">
                                 <label for="user">Usuario</label>
-                                <input type="text" className="form-control" id="usuario" value="user"/>
+                                <input type="text" className="form-control" id="usuario"  name="user"
+                                onChange={e => setUser(e.target.value)}/>
                             </div>
                             <div className="form-group">
                                 <label for="password">Contraseña</label>
-                                <input type="password" className="form-control" id="password" value="password"/>
+                                <input type="password" className="form-control" id="password"  name="password"
+                                onChange={e => setPass(e.target.value)}/>
                             </div>
                             <div className="form-group">
                                 <label for="password1">Confirmar Contraseña</label>
-                                <input type="password" className="form-control" id="password1" value="password"/>
+                                <input type="password" className="form-control" id="password1" 
+                                onChange={e => setPassC(e.target.value)}/>
                             </div>
                             <button type="submit" className="btn btn-danger" onClick={guardarDatos}>Guardar Datos</button>
                         </form>

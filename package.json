@@ -9,6 +9,8 @@
     "@types/jquery": "^3.5.5",
     "axios": "^0.21.1",
     "bs-stepper": "^1.7.0",
+    "emailjs": "^3.4.0",
+    "emailjs-com": "^2.6.4",
     "jquery": "^3.5.1",
     "react": "^17.0.1",
     "react-bootstrap-theme-switcher": "^1.0.7",

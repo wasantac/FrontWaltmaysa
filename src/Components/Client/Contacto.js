@@ -1,53 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import emailjs from 'emailjs-com';
+import '../../css/Contacto.css'
+import { Button, Form, FormGroup, Label, Input,Container} from 'reactstrap';
 const Contacto = () => {
+    const [email,setEmail] = useState("")
+    const [nombre,setNombre] = useState("")
+    const [apellido,setApellido] = useState("")
+    const [mensaje,setMensaje] = useState("")
+
+    function enviarCorreo(e){
+        e.preventDefault();
+        emailjs.sendForm('service_y186g2g', 'template_7ha59e8', e.target, 'user_pTLxySAThdUhCksIGYy0E')
+        .then((result) => {
+            console.log("correo enviado")
+        }, (error) => {
+            console.log("error")
+        });   
+        e.target.reset();
+    }
+
     return (
         <div>
-             <Header />
-                <div className="container"><div>
-                   
-                    <div id="tarjetaformulario" className="card card-nav-tabs">
-                        <div id="formulariodiv" className="card-body">
-                            <h1>Contáctenos</h1>
-                            <form>
-                            <div className="form-row">
-                                <div className="form-group col-md-6">
-                                <label for="inputEmail4">Nombre</label>
-                                <input type="email" className="form-control" id="inputEmail4" placeholder="Nombre"></input>
-                                </div>
-                                <div className="form-group col-md-6">
-                                <label for="inputPassword4">Apellido</label>
-                                <input type="password" className="form-control" id="inputPassword4" placeholder="Apellido"></input>
-                                </div>
-                            </div>
-
-                            <div className="form-row">
-                                <div className="form-group col-md-6">
-                                <label for="inputCity">Email</label>
-                                <input type="text" className="form-control" id="inputCity"></input>
-                                </div>
-
-                                <div className="form-group col-md-6">
-                                <label className="label-control">Fecha de Nacimiento</label>
-                                <input type="date" className="form-control" />
-                            </div>
-                            </div>
-
-                            <div className="form-group">
-                                <label for="inputAddress">Mensaje</label>
-                                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-
-                            <button type="submit" className="btn btn-primary">Enviar</button>
-                            </form>
-                        </div>
+            <Header />
+            <Container className="py-5 mb-5 bg-white my-5 formulario">
+            <h1>Contacto</h1>
+            <Form  onSubmit={enviarCorreo}>
+                    <FormGroup>
+                        <Label for="nombre" className="blanco">Nombre:</Label>
+                        <Input type="text" name="nombre" id="nombre" required/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="apellido" className="blanco">Apellido:</Label>
+                        <Input type="text" name="apellido" id="apellido" required/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleEmail" className="blanco">Correo Electronico: </Label>
+                        <Input type="email" name="email" id="exampleEmail" placeholder="abc@homtail.com" required/>
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="mensaje" className="blanco">Mensaje:</Label>
+                        <Input type="textarea" name="mensaje" id="mensaje" required/>
+                    </FormGroup>
+                    <div className="d-flex justify-content-center">
+                        <Button id="enviar" className="btn-danger">Enviar</Button>
                     </div>
-                    
-                </div>
-            </div>
+                </Form>
+            </Container>
             <Footer />
         </div>
+
 
         
     );
