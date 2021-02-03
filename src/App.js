@@ -19,6 +19,7 @@ import ClienteHead from './Components/Client/ClienteHead';
 import Loader from './Components/Client/Loader';
 import Perfil from './Components/Client/Perfil';
 import { useEffect } from 'react';
+import Compras from './Components/Client/Compras';
 function App() {
   useEffect(()=>{
     if(!localStorage.getItem("carrito")){
@@ -49,6 +50,9 @@ function App() {
             <Auth></Auth>
           </Route>
           <Route path="/productos"component={Productos} >
+          
+          </Route>
+          <Route path="/compras"component={Compras} >
           
           </Route>
           <Route path="/admin" component={Admin}/>

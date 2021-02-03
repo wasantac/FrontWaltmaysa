@@ -1,0 +1,47 @@
+{
+    "compras": [{
+            "id_cliente":1,
+            "id_doc_contable": 1,
+            "fecha_emision": "02/02/2021",
+            "total": 755,
+            "detalle": [{
+                "id": 1,
+                "nombre": "Sanduchera Panini",
+                "tipo": "Tecnología",
+                "precio": 65,
+                "cantidad":1
+            },
+            {
+                "id": 2,
+                "nombre": "Televisor 55' TCL",
+                "tipo": "Electrodomésticos",
+                "precio": 625,
+                "cantidad":1
+            }],
+            "metodopago": "Efectivo",
+            "Activo":true
+        },
+        {
+            "id_cliente":1,
+            "id_doc_contable": 2,
+            "fecha_emision": "02/02/2021",
+            "total": 830,
+            "detalle": [{
+                "id": 3,
+                "nombre": "Televisor 55'Samsung",
+                "tipo": "Electrodomésticos",
+                "precio": 765,
+                "cantidad":1
+            },
+            {
+                "id": 4,
+                "nombre": "Freidora de Aire 1.5 lt",
+                "tipo": "Tecnología",
+                "precio": 65,
+                "cantidad":1
+            }],
+            "metodopago": "Efectivo",
+            "Activo":true
+        }
+    ]
+}
