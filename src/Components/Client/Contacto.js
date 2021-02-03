@@ -5,11 +5,6 @@ import emailjs from 'emailjs-com';
 import '../../css/Contacto.css'
 import { Button, Form, FormGroup, Label, Input,Container} from 'reactstrap';
 const Contacto = () => {
-    const [email,setEmail] = useState("")
-    const [nombre,setNombre] = useState("")
-    const [apellido,setApellido] = useState("")
-    const [mensaje,setMensaje] = useState("")
-
     function enviarCorreo(e){
         e.preventDefault();
         emailjs.sendForm('service_y186g2g', 'template_7ha59e8', e.target, 'user_pTLxySAThdUhCksIGYy0E')

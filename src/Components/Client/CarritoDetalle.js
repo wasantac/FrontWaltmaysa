@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {FaTrash} from 'react-icons/fa'
+import { useHistory } from 'react-router-dom';
 import {Row,Col,Input} from 'reactstrap';
 import '../../css/Detalle.css';
 const CarritoDetalle = ({src,titulo,precio,cant,id}) => {
@@ -25,30 +26,7 @@ const CarritoDetalle = ({src,titulo,precio,cant,id}) => {
         }
         localStorage.setItem("carrito",JSON.stringify(nuevoCarrito));
     }
-    let restar = () =>{
-        if(cantidad > 1){
-            setCantidad(cantidad - 1);        
-        }
-        let idTodos = JSON.parse(localStorage.getItem("carrito"));
-        for(let producto of idTodos.carrito){
-            if(producto.id === id){
-                producto.cantidad = cantidad
-            }
-        }
 
-        localStorage.setItem("carrito",JSON.stringify(idTodos))
-        
-    }
-    let sumar = () =>{
-        setCantidad(cantidad + 1);
-        let idTodos = JSON.parse(localStorage.getItem("carrito"));
-        for(let producto of idTodos.carrito){
-            if(producto.id === id){
-                producto.cantidad = cantidad
-            }
-        }
-        localStorage.setItem("carrito",JSON.stringify(idTodos))
-    }
     if(!eliminar){
         return (
             <div className="fila m-4">
@@ -60,17 +38,7 @@ const CarritoDetalle = ({src,titulo,precio,cant,id}) => {
                     <Col sm="7" className="tituloCantidad">
                         <h4 className="text-dark font-weight-bold text-left">{titulo}</h4>
                         <div className="d-flex align-items-center">
-                                <button className="btn btn-sm btn-primary text-white mx-1" onClick={restar}>-</button>
-                                <Input
-                                type="text"
-                                name="cantidad"
-                                id="idCantidad"
-                                value={cantidad}
-                                className="text-center carritoProducto"
-                                readOnly
-                                />
-                                <button className="btn btn-sm btn-primary text-white mx-1" onClick={sumar}>+</button>
-                                
+                        <p>cantidad: {cantidad}</p>
                         </div>
                     </Col>
                     <Col sm="2">

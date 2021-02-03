@@ -1,13 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import {Col,Row,Spinner} from 'reactstrap';
+import {Col,Row,Spinner,Modal, ModalHeader, ModalBody, ModalFooter,Button} from 'reactstrap';
 import {FaMoneyBillWave,RiBankLine} from 'react-icons/all';
 import CarritoDetalle from './CarritoDetalle';
+import '../../css/Carrito.css'
 const Carrito = () => {
-    const [precio,setPrecio] = useState(0);
+    const [precio,setPrecio] = useState([]);
     const [items,setItems] = useState([]);
+    const [tabla,setTabla] = useState([]);
     const [loaded,setLoaded] = useState(false);
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
     useEffect(() =>{
         fetch("/assets/json/productos.json")
         .then((response) => response.json())
@@ -17,11 +21,21 @@ const Carrito = () => {
             for(let producto of productos){
                 for(let id of idTodos.carrito){
                     if(producto.id === id.id){
+                        
+                        
                         items.push(                        
                         <CarritoDetalle key={producto.id} src={producto.imageurl} titulo={producto.nombre} cantidad={id.cantidad} precio={producto.precio} id={producto.id}></CarritoDetalle>
                         )
+                        tabla.push(
+                            <tr key={producto.id}>
+                                <td className="w-100">{producto.nombre}</td>
+                                <td className="w-100"><strong>${producto.precio}</strong></td>
+                            </tr>
+                        )
+                        precio.push(producto.precio)
                         
                     }
+
                 }
             }
             setLoaded(true);
@@ -30,10 +44,11 @@ const Carrito = () => {
         .catch((error) => {
             console.log("Error: " + error)
         })
-    })
+    },[])
     let onChange = () =>{
 
     }
+
     if(loaded){
         return (
             <div>
@@ -43,9 +58,11 @@ const Carrito = () => {
                     {items}
                 </Col>
                 <Col sm="2" className="bg-white py-5">
-                <h3>Resumen
-    
-                </h3>
+                <h3>Resumen</h3>
+                <table className="mx-4">
+                    {tabla}
+                </table>
+                <p className="mt-3">Precio total: ${precio.reduce(function(a,b){return a + b},0)}</p>
                 <h3>Método de Pago</h3>
                 <div className="form-check form-check-radio ">
                     <label className="form-check-label ">
@@ -70,11 +87,23 @@ const Carrito = () => {
     
                     </label>
                 </div>
-                <button className="btn btn-primary">Pagar</button>
-    
+                <button className="btn btn-primary" onClick={toggle}>Pagar</button>
+
                 </Col>
                 </Row>
-    
+                <Modal isOpen={modal} toggle={toggle} >
+                    <ModalHeader toggle={toggle}>Resumen de Pago</ModalHeader>
+                    <ModalBody>
+                    <table>
+                    {tabla}
+                    </table>
+                    Precio total: <strong>${precio.reduce(function(a,b){return a + b},0)}</strong>
+                    </ModalBody>
+                    <ModalFooter>
+                    <Button color="primary" onClick={toggle}>Pagar</Button>{' '}
+                    <Button color="secondary" onClick={toggle}>Cancelar</Button>
+                    </ModalFooter>
+                </Modal>
                 <Footer></Footer>
             </div>
         );
