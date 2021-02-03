@@ -32,6 +32,12 @@ let Navegacion = () =>{
     
                                     </a>
                                 </li>
+                                <li className="active" id="components">
+                                    <a className="sidenav-item-link" href="/component">
+                                        <span className="nav-text">Historial de Compras</span>
+    
+                                    </a>
+                                </li>
                             </div>
                         </ul>
                     </li>

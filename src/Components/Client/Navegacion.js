@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../css/Navegacion.css'
 import {BiSearchAlt} from 'react-icons/bi'
 import {useHistory} from 'react-router-dom';
@@ -7,6 +7,18 @@ import {useHistory} from 'react-router-dom';
 
 let Navegacion = () =>{
     const history = useHistory();
+    const [perfil,setPerfil] = useState(                        <a href="/auth/login" className="text-dark py-auto nav-link">
+    <img src="/assets/svg/account_circle-24px.svg" width="35px" height="35px" alt="account"></img>
+    Iniciar Sesión
+</a>    )
+    useEffect(() => {
+        if(localStorage.getItem("session")){
+            setPerfil(                        <a href="/perfil" className="text-dark py-auto nav-link">
+            <img src="/assets/svg/account_circle-24px.svg" width="35px" height="35px" alt="account"></img>
+            Perfil
+    </a>    )
+        }
+    },[])
     return(
         <nav className="navbar navbar-expand-lg sticky-top mb-0">
         <div className="container">
@@ -36,10 +48,7 @@ let Navegacion = () =>{
             <div className="collapse navbar-collapse">
                 <ul className="navbar-nav">
                     <li className="nav-item oculto">
-                        <a href="/auth/login" className="text-dark py-auto nav-link">
-                            <img src="/assets/svg/account_circle-24px.svg" width="35px" height="35px" alt="account"></img>
-                            Iniciar Sesión
-                        </a>
+                        {perfil}
                     </li>
                     <li className="nav-item oculto">
                         <a href="/carrito" className="text-dark py-auto nav-link">
@@ -72,10 +81,7 @@ let Navegacion = () =>{
                         </a>
                     </div>
                     <div className="col-xs-auto pr-1 my-auto">
-                        <a href="/auth/login" className="text-dark py-auto">
-                        <img src="/assets/svg/account_circle-24px.svg" width="35px" height="35px" alt="account"></img>
-                            Iniciar Sesión
-                        </a>
+                        {perfil}
                     </div>
 
                 </form>

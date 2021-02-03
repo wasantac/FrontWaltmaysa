@@ -8,13 +8,11 @@ import axios from 'axios';
 const PerfilEditar = () => {
     const [user,setUser] = useState("");
     const [pass,setPass] = useState("");
-    const [email,setEmail] = useState("");
     const [passC,setPassC] = useState("");
     const history = useHistory();
     let guardarDatos = () => {
         if(pass === passC){
             axios.post("https://0ab699b799efc19a7e61ae996b79a3da.m.pipedream.net",{
-                correo: email,
                 usuario: user,
                 password: pass 
             })
@@ -34,11 +32,6 @@ const PerfilEditar = () => {
                         <Container className="bg-white contenedorP p-5">
                         <h1>Cambiar Datos</h1>
                         <form>
-                            <div className="form-group">
-                                <label for="correo" >Correo</label>
-                                <input type="email" className="form-control" id="correo"  name="correo"
-                                onChange={e => setEmail(e.target.value)}/>
-                            </div>
                             <div className="form-group">
                                 <label for="user">Usuario</label>
                                 <input type="text" className="form-control" id="usuario"  name="user"
