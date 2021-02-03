@@ -16,7 +16,6 @@ const Expire = props => {
   
 class Loader extends Component {
     render() {
-
         return (
             <Expire delay="2000">
                 <div className="loader_bg">

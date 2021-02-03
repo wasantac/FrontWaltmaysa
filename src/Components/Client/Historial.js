@@ -4,6 +4,7 @@ const Historial = () => {
     return (
         <div>
             holas
+            
         </div>
     );
 }

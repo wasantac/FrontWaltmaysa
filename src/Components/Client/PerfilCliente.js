@@ -20,7 +20,7 @@ const PerfilCliente = () => {
                         </div>
                         <h3 className="text-left mb-0">Walter Santaruz</h3>
                         <h6 className="text-left mt-0 text-muted">@Walter</h6>
-                        <button className="btn btn-danger w-100">Editar Perfil</button>
+                        <a href ="/perfil/editar"className="btn btn-danger w-100">Editar Perfil</a>
                         </Container>
                         
                     </Col>
